@@ -31,7 +31,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   
   Profile.associate = function(models) {
-    // associations can be defined here
+    Profile.hasMany(models.Notes, {
+      foreignKey: 'profileId',
+      onDelete: 'CASCADE'
+    });
   };
   
   return Profile;
