@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
 const userRoutes = require('./routes/userRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
+const profileRoutes = require('./routes/profieRoutes')
 
 const app = express();
 const port = 3000;
@@ -11,6 +12,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use('/api', userRoutes);
 app.use('/api', serviceRoutes);
+app.use('/api', profileRoutes);
 app.use((err, req, res, next) => {
   console.log(err.stack);
   res.status(500).send('Something broke!');

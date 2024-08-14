@@ -63,9 +63,6 @@ module.exports = {
       projectStatus: {
         type: Sequelize.STRING
       },
-      notes: {
-        type: Sequelize.STRING
-      },
       feedback: {
         type: Sequelize.STRING
       },
